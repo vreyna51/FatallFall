@@ -31,9 +31,9 @@ public class Camera : MonoBehaviour
         pivot.Rotate(-vertical, 0, 0);
 
         //Limit up/down camera rotation
-        if(pivot.rotation.eulerAngles.x > 45f && pivot.rotation.eulerAngles.x < 180f)
+        if (pivot.rotation.eulerAngles.x > 80f && pivot.rotation.eulerAngles.x < 180f)
         {
-            pivot.rotation = Quaternion.Euler(45f, 0f, 0f);
+            pivot.rotation = Quaternion.Euler(80f, 0f, 0f);
         }
 
         if (pivot.rotation.eulerAngles.x > 180f && pivot.rotation.eulerAngles.x < 315f)
@@ -42,7 +42,7 @@ public class Camera : MonoBehaviour
         }
 
         //show the camera based on current rotation of target & original offset
-            float desiredAngle = target.eulerAngles.y;
+        float desiredAngle = target.eulerAngles.y;
         float desiredXAngle = pivot.eulerAngles.x;
         Quaternion rotation = Quaternion.Euler(desiredXAngle, desiredAngle, 0);
         transform.position = target.position - (rotation * offset);

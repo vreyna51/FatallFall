@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -45,5 +46,14 @@ public class Player : MonoBehaviour
         }
         moveDirection.y += (Physics.gravity.y * gravityScale);
         controller.Move(moveDirection*Time.deltaTime);
+    }
+
+    void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        Debug.Log(hit.gameObject.tag);
+        if (hit.gameObject.tag == "Ground")
+        {
+            SceneManager.LoadScene(1);
+        }
     }
 }
