@@ -4,10 +4,18 @@ using UnityEngine;
 
 public class Platform : MonoBehaviour
 {
-    void OnCollisionEnter(Collision collision)
+    GameObject player;
+
+    void Start()
     {
-        Debug.Log(gameObject + "\n");
-        Debug.Log("Success\n");
-        Debug.Log(collision.gameObject);
+        player = GameObject.Find("Player");
+    }
+
+    void Update()
+    {
+        if(gameObject.transform.position.y < player.transform.position.y-15f)
+        {
+            Destroy(gameObject);
+        }
     }
 }
