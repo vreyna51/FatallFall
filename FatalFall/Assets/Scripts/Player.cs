@@ -50,10 +50,9 @@ public class Player : MonoBehaviour
 
     void OnControllerColliderHit(ControllerColliderHit hit)
     {
-        Debug.Log(hit.gameObject.tag);
         if (hit.gameObject.tag == "Ground")
         {
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene(2);
         }
     }
 }
