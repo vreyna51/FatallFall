@@ -30,16 +30,16 @@ public class Camera : MonoBehaviour
         float vertical = Input.GetAxis("Mouse Y") * rotateSpeed;
         pivot.Rotate(-vertical, 0, 0);
 
-        //Limit up/down camera rotation
-        if (pivot.rotation.eulerAngles.x > 80f && pivot.rotation.eulerAngles.x < 180f)
-        {
-            pivot.rotation = Quaternion.Euler(80f, 0f, 0f);
-        }
+        ////Limit up/down camera rotation
+        //if (pivot.rotation.eulerAngles.x > 80f && pivot.rotation.eulerAngles.x < 180f)
+        //{
+        //    pivot.rotation = Quaternion.Euler(80f, 0f, 0f);
+        //}
 
-        if (pivot.rotation.eulerAngles.x > 180f && pivot.rotation.eulerAngles.x < 315f)
-        {
-            pivot.rotation = Quaternion.Euler(315f, 0f, 0f);
-        }
+        //if (pivot.rotation.eulerAngles.x > 180f && pivot.rotation.eulerAngles.x < 315f)
+        //{
+        //    pivot.rotation = Quaternion.Euler(315f, 0f, 0f);
+        //}
 
         //show the camera based on current rotation of target & original offset
         float desiredAngle = target.eulerAngles.y;

@@ -13,9 +13,9 @@ public class Platform : MonoBehaviour
 
     void Update()
     {
-        if(gameObject.transform.position.y < player.transform.position.y-15f)
-        {
-            Destroy(gameObject);
-        }
+        //if(gameObject.transform.position.y < player.transform.position.y-15f)
+        //{
+        //    Destroy(gameObject);
+        //}
     }
 }
